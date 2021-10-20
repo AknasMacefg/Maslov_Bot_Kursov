@@ -6,7 +6,18 @@
         xmlns:local="clr-namespace:Maslov_Bot_Kursov"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
+    <Grid Background="Black">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="481*"/>
+            <ColumnDefinition Width="319*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="28*"/>
+            <RowDefinition Height="177*"/>
+            <RowDefinition Height="12*"/>
+        </Grid.RowDefinitions>
+        <Frame Content="Frame" Source="Pages/Chat/ChatPage.xaml" HorizontalAlignment="Center" Width="461" Height="350" VerticalAlignment="Center" Grid.Row="1"/>
+        <Image Grid.Column="1" HorizontalAlignment="Left" Height="320" Margin="32,10,0,0" Grid.Row="1" VerticalAlignment="Top" Width="261"/>
 
     </Grid>
 </Window>
