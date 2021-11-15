@@ -22,5 +22,33 @@ namespace Maslov_Bot_Kursov.Pages.Chat
         {
             InitializeComponent();
         }
+
+        private void ButtonSend_Click(object sender, RoutedEventArgs e)
+        {
+           
+
+                string text = "";
+
+                if (!string.IsNullOrEmpty(MessageBox.Text))
+                {
+
+                    text = MessageBox.Text.Trim();
+                }
+
+                if (!string.IsNullOrEmpty(text))
+                {
+
+                    bool result = true;
+
+                    if (result)
+                    {
+                        MessageBox.Text = "";
+                    }
+
+                }
+
+                
+            
+        }
     }
 }

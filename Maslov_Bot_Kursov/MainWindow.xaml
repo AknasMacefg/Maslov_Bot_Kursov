@@ -16,8 +16,12 @@
             <RowDefinition Height="177*"/>
             <RowDefinition Height="12*"/>
         </Grid.RowDefinitions>
-        <Frame Content="Frame" Source="Pages/Chat/ChatPage.xaml" HorizontalAlignment="Center" Width="461" Height="350" VerticalAlignment="Center" Grid.Row="1"/>
-        <Image Grid.Column="1" HorizontalAlignment="Left" Height="320" Margin="32,10,0,0" Grid.Row="1" VerticalAlignment="Top" Width="261"/>
+        <Frame x:Name="MainFrame" Content="Frame" Source="Pages/Chat/ChatPage.xaml" Grid.Row="1" NavigationUIVisibility="Hidden" Margin="10,2,10,2"/>
+        <Frame x:Name="ImageFrame" Content="Frame" Source="Pages/Bot/BotImage.xaml" HorizontalAlignment="Right" Width="299" Height="334" VerticalAlignment="Center" Grid.Row="1" Grid.Column="1" Margin="0,0,10,0"/>
+        <Button Content="Button" HorizontalAlignment="Left" Margin="10,8,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.403,0.303" Height="38" Width="109" Foreground="White" Background="Black" BorderBrush="Black" Click="ButtonChat_Click"/>
+        <Button Content="Button" HorizontalAlignment="Left" Margin="124,8,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.403,0.303" Height="38" Width="109" Foreground="White" Background="Black" BorderBrush="Black" Click="ButtonStudy_Click"/>
+        <Button Content="Button" HorizontalAlignment="Left" Margin="241,9,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.403,0.303" Height="38" Width="109" Foreground="White" Background="Black" BorderBrush="Black" Click="ButtonSettings_Click"/>
+        <TextBlock Grid.Column="1" HorizontalAlignment="Right" Text="TextBlock" TextWrapping="Wrap" VerticalAlignment="Center" Height="36" Width="299" Margin="0,0,10,0" Foreground="White" TextAlignment="Center" FontSize="24"/>
 
     </Grid>
 </Window>

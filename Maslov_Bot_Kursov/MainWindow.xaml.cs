@@ -12,6 +12,9 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Maslov_Bot_Kursov.Pages.Chat;
+using Maslov_Bot_Kursov.Pages.Study;
+using Maslov_Bot_Kursov.Pages.Settings;
 
 namespace Maslov_Bot_Kursov
 {
@@ -25,6 +28,21 @@ namespace Maslov_Bot_Kursov
             InitializeComponent();
             
            
+        }
+
+        private void ButtonChat_Click(object sender, RoutedEventArgs e)
+        {
+            MainFrame.Source = new Uri("Pages/Chat/ChatPage.xaml", UriKind.Relative);
+        }
+
+        private void ButtonStudy_Click(object sender, RoutedEventArgs e)
+        {
+            MainFrame.Source = new Uri("Pages/Study/StudyBook.xaml", UriKind.Relative);
+        }
+
+        private void ButtonSettings_Click(object sender, RoutedEventArgs e)
+        {
+            MainFrame.Source = new Uri("Pages/Settings/SettingsPage.xaml", UriKind.Relative);
         }
     }
 }

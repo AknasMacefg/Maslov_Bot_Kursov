@@ -8,7 +8,6 @@
 
   <ItemGroup>
     <Folder Include="Images\" />
-    <Folder Include="Pages\Study\" />
     <Folder Include="Dictionaries\" />
     <Folder Include="Libraries\" />
   </ItemGroup>
