@@ -9,14 +9,22 @@
       Title="SettingsPage">
 
     <Grid Background="Black">
-        <Button Content="Button" HorizontalAlignment="Left" Margin="48,223,0,0" VerticalAlignment="Top" Height="53" Width="104"/>
-        <TextBox HorizontalAlignment="Left" Margin="48,52,0,0" Text="TextBox" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Button Name="SaveButton" Background="Black" Foreground="White" BorderBrush="White" Content="Сохранить" HorizontalAlignment="Left" Margin="48,223,0,0" VerticalAlignment="Top" Height="53" Width="104" />
+        <TextBox Name="NameForBot" HorizontalAlignment="Left" Margin="48,52,0,0" Text="{Binding Name}" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
 
-        <TextBlock HorizontalAlignment="Left" Margin="48,31,0,0" Text="TextBlock" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Foreground="White"/>
-        <TextBlock HorizontalAlignment="Left" Margin="48,90,0,0" Text="TextBlock" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Foreground="White"/>
-        <ComboBox HorizontalAlignment="Left" Margin="48,111,0,0" VerticalAlignment="Top" Width="120"/>
-        <TextBlock HorizontalAlignment="Left" Margin="48,150,0,0" Text="TextBlock" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Foreground="White"/>
-        <ComboBox HorizontalAlignment="Left" Margin="48,171,0,0" VerticalAlignment="Top" Width="120"/>
+        <TextBlock HorizontalAlignment="Left" Margin="48,31,0,0" Text="Изменить имя бота: " TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Foreground="White"/>
+        <TextBlock HorizontalAlignment="Left" Margin="48,90,0,0" Text="Изменить тему интерфейса:" TextWrapping="Wrap" VerticalAlignment="Top" Width="157" Foreground="White"/>
+        <ComboBox HorizontalAlignment="Left" Margin="48,111,0,0" VerticalAlignment="Top" Width="120">
+            <Label Content="1"/>
+            <Label Content="2"/>
+            <Label Content="3"/>
+        </ComboBox>
+        <TextBlock HorizontalAlignment="Left" Margin="48,150,0,0" Text="Изменить изображение бота:" TextWrapping="Wrap" VerticalAlignment="Top" Width="168" Foreground="White"/>
+        <ComboBox HorizontalAlignment="Left" Margin="48,171,0,0" VerticalAlignment="Top" Width="120">
+            <Label Content="1"/>
+            <Label Content="2"/>
+            <Label Content="3"/>
+        </ComboBox>
 
     </Grid>
 </Page>

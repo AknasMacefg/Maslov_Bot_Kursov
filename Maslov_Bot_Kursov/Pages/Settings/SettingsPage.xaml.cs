@@ -21,6 +21,9 @@ namespace Maslov_Bot_Kursov.Pages.Settings
         public SettingsPage()
         {
             InitializeComponent();
+            MainWindow main = new MainWindow();
+            NameForBot.Text = main.NameBox.Text;
         }
+
     }
 }

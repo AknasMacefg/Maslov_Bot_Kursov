@@ -26,9 +26,19 @@ namespace Maslov_Bot_Kursov
         public MainWindow()
         {
             InitializeComponent();
-            
-           
+            Bot botname = new Bot();
+            Main.Title = botname.Name;
+            NameBox.Text = botname.Name;
+
+
         }
+
+        public class Bot
+        {
+            public string Name = "Alex";
+            private int rep { get; set; }
+
+    }
 
         private void ButtonChat_Click(object sender, RoutedEventArgs e)
         {

@@ -13,30 +13,30 @@
             <RowDefinition Height="172*"/>
             <RowDefinition Height="53*"/>
         </Grid.RowDefinitions>
-        <TextBox Name="MessageBox"  HorizontalAlignment="Left" Height="43" Margin="10,10,0,0" Grid.Row="1" Text="TextBox" TextWrapping="Wrap" VerticalAlignment="Top" Width="344"/>
-        <Button Content="Button" HorizontalAlignment="Left" Margin="361,0,0,0" VerticalAlignment="Center" Height="63" Width="90" Grid.Row="1" Click="ButtonSend_Click"/>
-        <ListBox ScrollViewer.VerticalScrollBarVisibility="Auto" ScrollViewer.CanContentScroll="True" Background="Black" BorderBrush="White"
-   					 Name="MessagesList" Focusable="False" 
-   					 HorizontalAlignment="Stretch" HorizontalContentAlignment="Stretch">
-                <ListBox.ItemTemplate>
-                    <DataTemplate>
-                        <ListBoxItem>
-                            <Border BorderBrush="White" HorizontalAlignment="{Binding Alignment}">
-                                <StackPanel Orientation="Vertical" Background="Black">
-                                    <TextBlock Text="{Binding Text}" Foreground="White"/>
-                                    <TextBlock Text="{Binding Date}" Foreground="White"/>
-                                </StackPanel>
-                            </Border>
-                        </ListBoxItem>
-                    </DataTemplate>
-                </ListBox.ItemTemplate>
-            </ListBox>
-    
+        <TextBox Name="MessageBox" Height="43" Margin="10,10,107,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" TextChanged="MessageBox_TextChanged"/>
+        <Button Content="--->" Background="Black" Foreground="White" BorderBrush="White"  Margin="0,10,10,0" Grid.Row="1" Click="ButtonSend_Click" HorizontalAlignment="Right" Width="90" Height="43" VerticalAlignment="Top" />
+        <ListBox  ScrollViewer.VerticalScrollBarVisibility="Auto" ScrollViewer.CanContentScroll="True" Background="Black" BorderBrush="White"
+   					 Name="MessagesList"  
+   					 HorizontalAlignment="Stretch" HorizontalContentAlignment="Stretch" >
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <ListBoxItem >
+                        <Border  HorizontalAlignment="{Binding Alignment}">
+                            <StackPanel Orientation="Vertical" Background="Gray">
+                                <TextBlock Text="{Binding TextBox}" Foreground="White"/>
+                                <TextBlock Text="{Binding Date}" Foreground="White"/>
+                            </StackPanel>
+                        </Border>
+                    </ListBoxItem>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+
 
         <TextBlock Canvas.Left="20" Canvas.Top="242" Text="TextBlock" TextWrapping="Wrap" Width="334" Foreground="White" Visibility="Hidden"/>
 
-        
-        <TextBlock HorizontalAlignment="Left" Height="24" Margin="10,58,0,0" Grid.Row="1" Text="0/100" TextWrapping="Wrap" VerticalAlignment="Top" Width="81" Foreground="White"/>
+
+        <TextBlock Name="Counter" HorizontalAlignment="Left" Height="24" Margin="10,58,0,0" Grid.Row="1" Text="0/100" TextWrapping="Wrap" VerticalAlignment="Top" Width="81" Foreground="White"/>
 
     </Grid>
 </Page>

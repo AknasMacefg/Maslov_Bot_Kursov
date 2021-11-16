@@ -10,6 +10,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Threading.Tasks;
 
 namespace Maslov_Bot_Kursov.Pages.Chat
 {
@@ -21,34 +22,50 @@ namespace Maslov_Bot_Kursov.Pages.Chat
         public ChatPage()
         {
             InitializeComponent();
+            MessageBox.MaxLength = 100;
         }
+
+        private class Message
+            {
+
+            public string TextBox { get; set; }
+            public string Date { get; set; }
+            public HorizontalAlignment Alignment { get; set; }
+
+        }
+
+      
 
         private void ButtonSend_Click(object sender, RoutedEventArgs e)
         {
+            Message message = new Message();
+            message.TextBox = MessageBox.Text;
+            message.Date = Convert.ToString(DateTime.Now);
+            message.Alignment = HorizontalAlignment.Right;
+
+            MessagesList.Items.Add(message);
+            BotMessage();
            
-
-                string text = "";
-
-                if (!string.IsNullOrEmpty(MessageBox.Text))
-                {
-
-                    text = MessageBox.Text.Trim();
-                }
-
-                if (!string.IsNullOrEmpty(text))
-                {
-
-                    bool result = true;
-
-                    if (result)
-                    {
-                        MessageBox.Text = "";
-                    }
-
-                }
-
-                
-            
         }
+
+        private void MessageBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            Counter.Text = MessageBox.Text.Length + "/100";
+            
+                
+        }
+
+        private async void BotMessage()
+        {
+            
+            Message message = new Message();
+            message.TextBox = "...";
+            message.Date = Convert.ToString(DateTime.Now);
+            message.Alignment = HorizontalAlignment.Left;
+            await Task.Delay(2000);
+            MessagesList.Items.Add(message);
+        }
+
+        
     }
 }
