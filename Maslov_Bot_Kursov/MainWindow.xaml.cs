@@ -26,11 +26,17 @@ namespace Maslov_Bot_Kursov
         public MainWindow()
         {
             InitializeComponent();
+            
+            FirstTime first = new FirstTime();
+           
+
+
             Bot botname = new Bot();
             Main.Title = botname.Name;
             NameBox.Text = botname.Name;
 
-
+            first.Show();
+            Main.IsEnabled = false;
         }
 
         public class Bot
