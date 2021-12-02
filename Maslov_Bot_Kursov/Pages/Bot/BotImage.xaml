@@ -8,8 +8,6 @@
       d:DesignHeight="334" d:DesignWidth="299"
       Title="BotImage">
 
-    <Grid>
-        <Rectangle HorizontalAlignment="Center" Height="100" Stroke="Black" VerticalAlignment="Center" Width="100" Fill="Green"/>
-
-    </Grid>
+    <Grid/>
+    
 </Page>
