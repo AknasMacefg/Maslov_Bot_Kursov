@@ -11,14 +11,14 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Maslov_Bot_Kursov.Pages.BotImage
+namespace Maslov_Bot_Kursov.Pages.Menu
 {
     /// <summary>
-    /// Логика взаимодействия для BotImage.xaml
+    /// Логика взаимодействия для HotKeys.xaml
     /// </summary>
-    public partial class BotImage : Page
+    public partial class HotKeys : Page
     {
-        public BotImage()
+        public HotKeys()
         {
             InitializeComponent();
         }

@@ -12,9 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using Maslov_Bot_Kursov.Pages.Chat;
-using Maslov_Bot_Kursov.Pages.Study;
-using Maslov_Bot_Kursov.Pages.Settings;
+using Maslov_Bot_Kursov.Pages.Menu;
+using Maslov_Bot_Kursov.Pages.Bot;
 
 namespace Maslov_Bot_Kursov
 {
@@ -26,39 +25,51 @@ namespace Maslov_Bot_Kursov
         public MainWindow()
         {
             InitializeComponent();
-            
-            FirstTime first = new FirstTime();
            
+            BotClass bot = new BotClass();
+            bot.GetState();
+            if (bot.firstTime == false)
+            {
+                FirstTime first = new FirstTime();
+                this.IsEnabled = false;
+                this.Hide();
+                first.Show();
 
-
-            Bot botname = new Bot();
-            Main.Title = botname.Name;
-            NameBox.Text = botname.Name;
-
-            first.Show();
-            Main.IsEnabled = false;
+            }
+            NameBox.Text = bot.name;
+            switch(bot.img)
+            {
+                case "Кот":
+                    BotImage.Source = new BitmapImage(new Uri("Images/CatFace.png", UriKind.Relative));
+                    break;
+                case "Собака":
+                    BotImage.Source = new BitmapImage(new Uri("Images/DogFace.png", UriKind.Relative));
+                    break;
+                case "Смайлик":
+                    BotImage.Source = new BitmapImage(new Uri("Images/SmileFace.png", UriKind.Relative));
+                    break;
+                
+            }
         }
-
-        public class Bot
-        {
-            public string Name = "Alex";
-            private int rep { get; set; }
-
-    }
 
         private void ButtonChat_Click(object sender, RoutedEventArgs e)
         {
-            MainFrame.Source = new Uri("Pages/Chat/ChatPage.xaml", UriKind.Relative);
+            MainFrame.Source = new Uri("Pages/Menu/ChatPage.xaml", UriKind.Relative);
         }
 
         private void ButtonStudy_Click(object sender, RoutedEventArgs e)
         {
-            MainFrame.Source = new Uri("Pages/Study/StudyBook.xaml", UriKind.Relative);
+            MainFrame.Source = new Uri("Pages/Menu/StudyBook.xaml", UriKind.Relative);
         }
 
         private void ButtonSettings_Click(object sender, RoutedEventArgs e)
         {
-            MainFrame.Source = new Uri("Pages/Settings/SettingsPage.xaml", UriKind.Relative);
+            MainFrame.Source = new Uri("Pages/Menu/SettingsPage.xaml", UriKind.Relative);
+        }
+
+        private void ButtonTest_Click(object sender, RoutedEventArgs e)
+        {
+            MainFrame.Source = new Uri("Pages/Menu/Test.xaml", UriKind.Relative);
         }
     }
 }

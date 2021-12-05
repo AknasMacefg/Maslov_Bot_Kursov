@@ -8,22 +8,30 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Maslov_Bot_Kursov.Pages.Bot;
 
-namespace Maslov_Bot_Kursov
+namespace Maslov_Bot_Kursov.Pages.Menu
 {
-    
-    public partial class FirstTime : Window
+    /// <summary>
+    /// Логика взаимодействия для SettingsPage.xaml
+    /// </summary>
+    public partial class SettingsPage : Page
     {
-        public FirstTime()
+        BotClass bot = new BotClass();
+        public SettingsPage()
         {
             InitializeComponent();
+            bot.GetState();
+            NameForBot.Text = bot.name;
+            Image.Text = bot.img;
+            DesignBox.Text = bot.design;
         }
 
         private void SaveButton_Click(object sender, RoutedEventArgs e)
         {
-            BotClass bot = new BotClass();
+         
 
             bot.name = NameForBot.Text;
             bot.firstTime = true;
@@ -31,19 +39,10 @@ namespace Maslov_Bot_Kursov
             bot.design = DesignBox.Text;
             bot.CreateState();
 
-            MessageBox.Show("Настройка прошла успешно!");
-            MainWindow window = new MainWindow();
-            window.Show();
-            window.IsEnabled = true;
-            window.NameBox.Text = bot.name;
-           
-            Close();
-
-           
-
-            
-
+            MessageBox.Show("Изменения сохранены успешно! Изменения вступят в силу при перезапуске программы!");
             
         }
+
+       
     }
 }

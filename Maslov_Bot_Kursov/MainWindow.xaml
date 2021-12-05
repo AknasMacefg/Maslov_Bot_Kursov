@@ -5,23 +5,24 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Maslov_Bot_Kursov"
         mc:Ignorable="d"
-        Title="{Binding Name}" Height="450" Width="800">
+        Title="Бот-помощник v0.12" Height="450" Width="800">
     <Grid Background="Black">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="481*"/>
             <ColumnDefinition Width="319*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="28*"/>
-            <RowDefinition Height="177*"/>
-            <RowDefinition Height="12*"/>
+            <RowDefinition Height="57*"/>
+            <RowDefinition Height="353*"/>
+            <RowDefinition Height="24*"/>
         </Grid.RowDefinitions>
-        <Frame x:Name="MainFrame" Content="Frame" Source="Pages/Chat/ChatPage.xaml" Grid.Row="1" NavigationUIVisibility="Hidden" Margin="10,2,10,2"/>
-        <Frame x:Name="ImageFrame" Content="Frame" Source="Pages/Bot/BotImage.xaml" HorizontalAlignment="Right" Width="299" Height="334" VerticalAlignment="Center" Grid.Row="1" Grid.Column="1" Margin="0,0,10,0"/>
+        <Frame x:Name="MainFrame" Content="Frame" Source="Pages/Menu/ChatPage.xaml" NavigationUIVisibility="Hidden" Margin="10,10,10,2" Grid.Row="1"/>
+        <TextBlock Name="NameBox" Grid.Column="1" Text="{Binding Name}" TextWrapping="Wrap" VerticalAlignment="Center" Height="36" Margin="10,0,10,0" Foreground="White" TextAlignment="Center" FontSize="24"/>
         <Button Content="Чат" FontSize="20" HorizontalAlignment="Left" Margin="10,8,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.403,0.303" Height="38" Width="109" Foreground="White" Background="Black" BorderBrush="White" Click="ButtonChat_Click"/>
-        <Button Content="Справочник" FontSize="16" HorizontalAlignment="Left" Margin="124,8,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.403,0.303" Height="38" Width="109" Foreground="White" Background="Black" BorderBrush="White" Click="ButtonStudy_Click"/>
-        <Button Content="Настройки" FontSize="18" HorizontalAlignment="Left" Margin="241,9,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.403,0.303" Height="38" Width="109" Foreground="White" Background="Black" BorderBrush="White" Click="ButtonSettings_Click"/>
-        <TextBlock Name="NameBox" Grid.Column="1" HorizontalAlignment="Right" Text="{Binding Name}" TextWrapping="Wrap" VerticalAlignment="Center" Height="36" Width="299" Margin="0,0,10,0" Foreground="White" TextAlignment="Center" FontSize="24"/>
+        <Button Content="Справочник" FontSize="16" HorizontalAlignment="Left" Margin="352,8,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.403,0.303" Height="38" Width="109" Foreground="White" Background="Black" BorderBrush="White" Click="ButtonStudy_Click"/>
+        <Button Content="Настройки" FontSize="18" HorizontalAlignment="Left" Margin="238,8,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.403,0.303" Height="38" Width="109" Foreground="White" Background="Black" BorderBrush="White" Click="ButtonSettings_Click"/>
+        <Image x:Name="BotImage" Grid.Column="1" Margin="14,10,16,16" Grid.Row="1"/>
+        <Button Content="Обучение" FontSize="20" HorizontalAlignment="Left" Margin="124,8,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.403,0.303" Height="38" Width="109" Foreground="White" Background="Black" BorderBrush="White" Click="ButtonTest_Click"/>
 
     </Grid>
 </Window>

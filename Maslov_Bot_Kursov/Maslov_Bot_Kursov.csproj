@@ -4,21 +4,35 @@
     <OutputType>WinExe</OutputType>
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <UseWPF>true</UseWPF>
+    <ApplicationIcon>Images\ProgramIcon.ico</ApplicationIcon>
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Images\" />
+    <None Remove="Images\Catface.png" />
+    <None Remove="Images\DogFace.png" />
+    <None Remove="Images\SmileFace.png" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Folder Include="Dictionaries\" />
     <Folder Include="Libraries\" />
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="AdaptiveCards" Version="2.7.2" />
-    <PackageReference Include="Extended.Wpf.Toolkit" Version="4.1.0" />
-    <PackageReference Include="MahApps.Metro" Version="2.4.9" />
-    <PackageReference Include="MahApps.Metro.IconPacks" Version="4.11.0" />
-    <PackageReference Include="Microsoft.ML" Version="1.7.0" />
+    <PackageReference Include="AdaptiveCards" Version="2.7.3" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Images\Catface.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\DogFace.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\SmileFace.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
   </ItemGroup>
 
 </Project>

@@ -12,16 +12,16 @@
 
         <TextBlock Margin="48,31,0,0" Text="Установить имя бота: " TextWrapping="Wrap" VerticalAlignment="Top" Foreground="White" HorizontalAlignment="Left" Width="120"/>
         <TextBlock Margin="48,90,0,0" Text="Установить тему интерфейса:" TextWrapping="Wrap" Foreground="White" HorizontalAlignment="Left" Width="168" Height="16" VerticalAlignment="Top"/>
-        <ComboBox  HorizontalAlignment="Left" Margin="48,111,0,0" VerticalAlignment="Top" Width="120">
-            <Label Content="1"/>
-            <Label Content="2"/>
-            <Label Content="3"/>
+        <ComboBox Name="DesignBox" HorizontalAlignment="Left" Margin="48,111,0,0" VerticalAlignment="Top" Width="120">
+            <Label Content="Темная тема"/>
+            <Label Content="Светлая тема"/>
+            <Label Content="Свежая мята"/>
         </ComboBox>
         <TextBlock Margin="48,150,0,0" Text="Установить изображение бота:" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="White" HorizontalAlignment="Left" Width="212"/>
         <ComboBox Name="Image" HorizontalAlignment="Left" Margin="48,171,0,0" VerticalAlignment="Top" Width="120">
-            <Label Content="1"/>
-            <Label Content="2"/>
-            <Label Content="3"/>
+            <Label Content="Кот"/>
+            <Label Content="Собака"/>
+            <Label Content="Смайлик"/>
         </ComboBox>
 
     </Grid>
