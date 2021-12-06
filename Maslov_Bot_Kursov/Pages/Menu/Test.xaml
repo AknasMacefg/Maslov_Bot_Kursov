@@ -9,10 +9,10 @@
       d:DesignHeight="341" d:DesignWidth="461"
       Title="Test">
 
-    <Grid Background="Black">
-        <Button FontSize="15" Name="FastTypingButton" BorderBrush="White" Background="Black" Foreground="White" Content="Проверка скоростного печатания" HorizontalAlignment="Center" Margin="0,124,0,0" VerticalAlignment="Top" Height="35" Width="238" Click="FastTypingButton_Click"/>
-        <Button FontSize="15" Name="HotKeys" BorderBrush="White" Background="Black" Foreground="White" Content="Обучение горячим клавишам" HorizontalAlignment="Center" Margin="0,191,0,0" VerticalAlignment="Top" Height="35" Width="238" Click="HotKeys_Click"/>
-        <Label Foreground="White" Content="Выберите одну из тем: " HorizontalAlignment="Center" HorizontalContentAlignment="Center" FontSize="25" Margin="0,38,0,0" VerticalAlignment="Top" Width="376"/>
+    <Grid>
+        <Button FontSize="15" Name="FastTypingButton"  Content="Проверка скорости печатания" HorizontalAlignment="Center" Margin="0,124,0,0" VerticalAlignment="Top" Height="35" Width="238" Click="FastTypingButton_Click"/>
+        <Button FontSize="15" Name="HotKeys"  Content="Тест по горячим клавишам" HorizontalAlignment="Center" Margin="0,191,0,0" VerticalAlignment="Top" Height="35" Width="238" Click="HotKeys_Click"/>
+        <Label  Content="Выберите одну из тем: " HorizontalAlignment="Center" HorizontalContentAlignment="Center" FontSize="25" Margin="0,38,0,0" VerticalAlignment="Top" Width="376"/>
 
 
 

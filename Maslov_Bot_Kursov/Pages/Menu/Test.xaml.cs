@@ -25,7 +25,7 @@ namespace Maslov_Bot_Kursov.Pages.Menu
 
         private void HotKeys_Click(object sender, RoutedEventArgs e)
         {
-            NavigationService?.Navigate(new HotKeys());
+            NavigationService?.Navigate(new HotKeysTest());
         }
 
         private void FastTypingButton_Click(object sender, RoutedEventArgs e)

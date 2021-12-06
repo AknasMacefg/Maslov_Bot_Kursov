@@ -26,7 +26,7 @@ namespace Maslov_Bot_Kursov.Pages.Bot
                     return Tuple.Create(vs[1], true);
                 }
             }
-            string answer = "Я не знаю как ответить на слово "+ userText + ". Напишите пожалуйста ответ, чтобы в следующий раз я смог ответить.";
+            string answer = "Я не знаю как ответить на фразу ' "+ userText + " '.\n Напишите пожалуйста ответ, чтобы в следующий раз я смог ответить.";
             return Tuple.Create(answer, false);
         }
 

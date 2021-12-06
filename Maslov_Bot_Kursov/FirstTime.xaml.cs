@@ -36,7 +36,8 @@ namespace Maslov_Bot_Kursov
             window.Show();
             window.IsEnabled = true;
             window.NameBox.Text = bot.name;
-           
+            Application.Current.MainWindow.Close();
+
             Close();
 
            

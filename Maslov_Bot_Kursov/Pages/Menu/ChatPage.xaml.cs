@@ -29,6 +29,14 @@ namespace Maslov_Bot_Kursov.Pages.Menu
         {
             InitializeComponent();
             MessageBox.MaxLength = 100;
+            bot.GetState();
+                Message message = new Message();
+                message.TextBox = "Приветствуют тебя пользователь!\n Меня зовут " + bot.name + "!\n При помощи данного чата вы можете задавать мне вопросы\n и я постараюсь на них ответить!";
+                message.Date = Convert.ToString(DateTime.Now);
+                message.Alignment = HorizontalAlignment.Left;
+                MessagesList.Items.Add(message);
+
+
         }
 
         private class Message

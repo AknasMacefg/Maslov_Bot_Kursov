@@ -11,6 +11,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Maslov_Bot_Kursov.Pages.Bot;
+using Maslov_Bot_Kursov;
 
 namespace Maslov_Bot_Kursov.Pages.Menu
 {
@@ -39,8 +40,17 @@ namespace Maslov_Bot_Kursov.Pages.Menu
             bot.design = DesignBox.Text;
             bot.CreateState();
 
-            MessageBox.Show("Изменения сохранены успешно! Изменения вступят в силу при перезапуске программы!");
+
+            MessageBox.Show("Изменения сохранены успешно! Изменения вступят в силу при следующем запуске программы!");
+           
+
+           
+
+
+
+           
             
+
         }
 
        

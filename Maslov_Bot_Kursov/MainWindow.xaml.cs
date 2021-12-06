@@ -25,7 +25,13 @@ namespace Maslov_Bot_Kursov
         public MainWindow()
         {
             InitializeComponent();
+            SettingSettings();
            
+            
+        }
+
+       public void SettingSettings()
+        {
             BotClass bot = new BotClass();
             bot.GetState();
             if (bot.firstTime == false)
@@ -37,7 +43,7 @@ namespace Maslov_Bot_Kursov
 
             }
             NameBox.Text = bot.name;
-            switch(bot.img)
+            switch (bot.img)
             {
                 case "Кот":
                     BotImage.Source = new BitmapImage(new Uri("Images/CatFace.png", UriKind.Relative));
@@ -48,7 +54,29 @@ namespace Maslov_Bot_Kursov
                 case "Смайлик":
                     BotImage.Source = new BitmapImage(new Uri("Images/SmileFace.png", UriKind.Relative));
                     break;
-                
+
+            }
+            switch (bot.design)
+            {
+                case "Темная тема":
+                    var uri1 = new Uri("Dictionaries/DarkTheme.xaml", UriKind.Relative);
+                    ResourceDictionary resourceDict1 = Application.LoadComponent(uri1) as ResourceDictionary;              
+                    Application.Current.Resources.Clear();
+                    Application.Current.Resources.MergedDictionaries.Add(resourceDict1);
+                    break;
+                case "Светлая тема":
+                    var uri2 = new Uri("Dictionaries/BrightTheme.xaml", UriKind.Relative);
+                    ResourceDictionary resourceDict2 = Application.LoadComponent(uri2) as ResourceDictionary;
+                    Application.Current.Resources.Clear();
+                    Application.Current.Resources.MergedDictionaries.Add(resourceDict2);
+                    break;
+                case "Свежая мята":
+                    var uri3 = new Uri("Dictionaries/FreshMint.xaml", UriKind.Relative);
+                    ResourceDictionary resourceDict3 = Application.LoadComponent(uri3) as ResourceDictionary;
+                    Application.Current.Resources.Clear();
+                    Application.Current.Resources.MergedDictionaries.Add(resourceDict3);
+                    break;
+
             }
         }
 

@@ -21,6 +21,7 @@ namespace Maslov_Bot_Kursov.Pages.Menu
     /// </summary>
     public partial class FastTypingPage : Page
     {
+        int errors = 0;
         float minutes;
         float sec;
         DispatcherTimer timer = new DispatcherTimer();
@@ -87,33 +88,10 @@ namespace Maslov_Bot_Kursov.Pages.Menu
             Result.Visibility = Visibility.Visible;
             Game.Visibility = Visibility.Hidden;
 
-            Time.Content += minutes + ":" + sec;
+            Time.Content += minutes + " минут " + sec + " секунд";
 
           
-                Speed.Content += Math.Round((TextIn.Text.Length / (minutes + (sec / 60)))) + " знаков/мин";
-
-
-            char[] characters = TextIn.Text.ToCharArray();
-            char[] Usercharacters = UserTextBox.Text.ToCharArray();
-
-
-            int i = 0;
-            int errors = 0;
-            if (characters.Length != Usercharacters.Length)
-            {
-                errors += characters.Length - Usercharacters.Length;
-            }
-            else
-            {
-                foreach (var letter in Usercharacters)
-                {
-                    if (letter != characters[i])
-                    {
-                        errors++;
-                    }
-                    i++;
-                }
-            }
+            Speed.Content += Math.Round((TextIn.Text.Length / (minutes + (sec / 60)))) + " знаков/мин";
 
             int accur = 100 - errors / (TextIn.Text.Length / 100);
             if (accur < 0)
@@ -139,6 +117,33 @@ namespace Maslov_Bot_Kursov.Pages.Menu
         private void Button_Click_3(object sender, RoutedEventArgs e)
         {
             NavigationService?.Navigate(new Test());
+        }
+
+        private void UserTextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            char[] characters = TextIn.Text.ToCharArray();
+            if (UserTextBox.Text.Length == 1)
+            {
+                if (UserTextBox.Text.EndsWith(characters[0]) == false)
+                {
+                    UserTextBox.Text = "";
+                    errors++;
+                }
+            }
+            if (UserTextBox.Text.Length > 1)
+            {
+                if (UserTextBox.Text.EndsWith(characters[UserTextBox.Text.Length - 1]) == false)
+                {
+                    UserTextBox.Text = UserTextBox.Text.Remove(UserTextBox.Text.Length - 1);
+                    UserTextBox.CaretIndex = UserTextBox.Text.Length;
+                    errors++;
+                }
+            }
+           
+            if (UserTextBox.Text.Length == TextIn.Text.Length)
+            {
+                ButtonEnd.Visibility = Visibility.Visible;
+            }
         }
     }
 }

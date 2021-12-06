@@ -14,11 +14,11 @@ using System.Windows.Shapes;
 namespace Maslov_Bot_Kursov.Pages.Menu
 {
     /// <summary>
-    /// Логика взаимодействия для HotKeys.xaml
+    /// Логика взаимодействия для HotKeysTest.xaml
     /// </summary>
-    public partial class HotKeys : Page
+    public partial class HotKeysTest : Page
     {
-        public HotKeys()
+        public HotKeysTest()
         {
             InitializeComponent();
         }

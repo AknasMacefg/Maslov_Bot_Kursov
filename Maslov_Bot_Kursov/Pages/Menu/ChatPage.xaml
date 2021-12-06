@@ -8,22 +8,21 @@
       d:DesignHeight="341" d:DesignWidth="461"
       Title="ChatPage">
 
-    <Grid Background="Black">
+    <Grid >
         <Grid.RowDefinitions>
             <RowDefinition Height="250*"/>
             <RowDefinition Height="91*"/>
         </Grid.RowDefinitions>
         <TextBox Name="MessageBox" Margin="10,0,107,39" TextWrapping="Wrap" TextChanged="MessageBox_TextChanged" Height="43" VerticalAlignment="Bottom" Grid.Row="1"/>
-        <Button Content="--->" Background="Black" Foreground="White" BorderBrush="White"  Margin="0,0,10,39" Click="ButtonSend_Click" HorizontalAlignment="Right" Width="90" Height="43" VerticalAlignment="Bottom" Grid.Row="1" />
-        <ListBox  ScrollViewer.VerticalScrollBarVisibility="Auto" ScrollViewer.CanContentScroll="True" Background="Black" BorderBrush="White"
-   					 Name="MessagesList" HorizontalContentAlignment="Stretch" Margin="0,5,0,10" >
+        <Button Content="--->" Margin="0,0,10,39" Click="ButtonSend_Click" HorizontalAlignment="Right" Width="90" Height="43" VerticalAlignment="Bottom" Grid.Row="1" />
+        <ListBox  ScrollViewer.VerticalScrollBarVisibility="Auto" ScrollViewer.CanContentScroll="True" Name="MessagesList" HorizontalContentAlignment="Stretch" Margin="0,5,0,10" >
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <ListBoxItem >
                         <Border  HorizontalAlignment="{Binding Alignment}">
-                            <StackPanel Orientation="Vertical" Background="Gray">
-                                <TextBlock Text="{Binding TextBox}" Foreground="White"/>
-                                <TextBlock Text="{Binding Date}" Foreground="White"/>
+                            <StackPanel Orientation="Vertical" >
+                                <TextBlock Text="{Binding TextBox}" />
+                                <TextBlock Text="{Binding Date}" />
                             </StackPanel>
                         </Border>
                     </ListBoxItem>
@@ -32,10 +31,10 @@
         </ListBox>
 
 
-        <TextBlock Canvas.Left="20" Canvas.Top="242" Text="TextBlock" TextWrapping="Wrap" Foreground="White" Visibility="Hidden" Margin="64,0,63,0"/>
+        <TextBlock Canvas.Left="20" Canvas.Top="242" Text="TextBlock" TextWrapping="Wrap"  Visibility="Hidden" Margin="64,0,63,0"/>
 
 
-        <TextBlock Name="Counter" HorizontalAlignment="Left" Margin="10,0,0,10" Grid.Row="1" Text="0/100" TextWrapping="Wrap" Width="81" Foreground="White" Height="24" VerticalAlignment="Bottom"/>
+        <TextBlock Name="Counter" HorizontalAlignment="Left" Margin="10,0,0,10" Grid.Row="1" Text="0/100" TextWrapping="Wrap" Width="81"  Height="24" VerticalAlignment="Bottom"/>
 
     </Grid>
 </Page>

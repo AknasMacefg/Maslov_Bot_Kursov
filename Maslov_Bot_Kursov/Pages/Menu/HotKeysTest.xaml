@@ -1,12 +1,12 @@
-﻿<Page x:Class="Maslov_Bot_Kursov.Pages.Menu.HotKeys"
+﻿<Page x:Class="Maslov_Bot_Kursov.Pages.Menu.HotKeysTest"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Maslov_Bot_Kursov.Pages.Menu"
       mc:Ignorable="d" 
-      d:DesignHeight="341" d:DesignWidth="461"
-      Title="HotKeys">
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="HotKeysTest">
 
     <Grid>
         
