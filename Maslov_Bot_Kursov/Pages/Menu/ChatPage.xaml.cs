@@ -28,7 +28,7 @@ namespace Maslov_Bot_Kursov.Pages.Menu
         public ChatPage()
         {
             InitializeComponent();
-            MessageBox.MaxLength = 100;
+            MessageBox.MaxLength = 25;
             bot.GetState();
                 Message message = new Message();
                 message.TextBox = "Приветствуют тебя пользователь!\n Меня зовут " + bot.name + "!\n При помощи данного чата вы можете задавать мне вопросы\n и я постараюсь на них ответить!";
@@ -75,7 +75,7 @@ namespace Maslov_Bot_Kursov.Pages.Menu
 
         private void MessageBox_TextChanged(object sender, TextChangedEventArgs e)
         {
-            Counter.Text = MessageBox.Text.Length + "/100";
+            Counter.Text = MessageBox.Text.Length + "/25";
             
                 
         }
