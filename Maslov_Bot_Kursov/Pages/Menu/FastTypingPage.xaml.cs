@@ -70,7 +70,7 @@ namespace Maslov_Bot_Kursov.Pages.Menu
                 }
                 sr.Close();
                 Random rnd = new Random();
-                TextIn.Text = mass[rnd.Next(0,3)];
+                TextIn.Text = mass[rnd.Next(0,mass.Count)];
 
                 
             }

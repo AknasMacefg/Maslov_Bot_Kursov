@@ -8,7 +8,7 @@
       d:DesignHeight="341" d:DesignWidth="461"
       Title="FastTypingPage">
 
-    <Grid >
+    <Grid>
         <Grid x:Name="Tutorial" Height="341" VerticalAlignment="Bottom" HorizontalAlignment="Center" Width="461" Visibility="Hidden">
             <Button   Content="Начать" HorizontalAlignment="Center" Margin="0,208,0,0" VerticalAlignment="Top" Height="53" Width="111" Click="Button_Click_1"/>
             <TextBlock  HorizontalAlignment="Center" Margin="0,0,0,184" Text="Проверка скорости печатания - это небольшая игра, в которй необходимо будет напечатать текст как можно быстре и с наименьшим количеством ошибок. После нажатия кнопки 'Начать' перед вами появится текст, который нужно будет перепечать в текстовом поле снизу. Как только вы завершите печать нажмите кнопку 'Завершить'." TextWrapping="Wrap" Width="418" Height="122" VerticalAlignment="Bottom"/>

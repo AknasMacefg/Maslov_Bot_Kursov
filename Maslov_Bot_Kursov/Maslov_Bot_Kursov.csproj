@@ -18,11 +18,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="AdaptiveCards" Version="2.7.3" />
-    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
-  </ItemGroup>
-
-  <ItemGroup>
     <Resource Include="Images\Catface.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
