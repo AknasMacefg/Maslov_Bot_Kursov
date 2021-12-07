@@ -22,15 +22,17 @@ namespace Maslov_Bot_Kursov.Pages.Menu
         List<string> mass = new List<string>();
         int rightanswers;
         string[] vs1;
-        string rightanswer;
+        List<string> rightanswer = new List<string>();
+        string rightanswernow;
         int questionscount = 1;
+        int[] alreadywere;
         public HotKeysTest()
         {
             InitializeComponent();
             Tutorial.Visibility = Visibility.Visible;
             Test.Visibility = Visibility.Hidden;
             Result.Visibility = Visibility.Hidden;
-            TextsLoad();
+            
 
         }
 
@@ -38,25 +40,37 @@ namespace Maslov_Bot_Kursov.Pages.Menu
         {
             Test.Visibility = Visibility.Visible;
             Tutorial.Visibility = Visibility.Visible;
-            TextInp();
+            TextsLoad();
+            
             
         }
 
 
         private void TextsLoad()
         {
-            using (StreamReader sr = new StreamReader("Tests.txt"))
+            try
             {
 
-                while (sr.EndOfStream != true)
-                {
-                    mass.Add(sr.ReadLine());
 
+                using (StreamReader sr = new StreamReader("Tests.txt"))
+                {
+
+                    while (sr.EndOfStream != true)
+                    {
+                        mass.Add(sr.ReadLine());
+
+                    }
+                    sr.Close();
+                    TextInp();
                 }
-                sr.Close();
+                return;
+            }
+            catch
+            {
+                NavigationService?.Navigate(new Test());
+                MessageBox.Show("В корневом каталоге программы отсутсвует или не заполнен текстовый файл Tests.txt. Чтобы продолжить пользоваться данным функционалом, пожалуйста создайте и заполните файл Tests.txt");
                 
             }
-            return;
         }
 
         private void TextInp()
@@ -74,11 +88,32 @@ namespace Maslov_Bot_Kursov.Pages.Menu
                     vs = word.Split(':');
                     questions.Add(vs[0]);
                     answers.Add(vs[1]);
-                rightanswer = vs[2];
+                    rightanswer.Add(vs[2]);
                 }
                 Random rnd = new Random();
             int randnumber = rnd.Next(0, questions.Count);
-                TextIn.Text = questions[randnumber];
+            if (alreadywere != null)
+            {
+                while (true)
+                {
+                    int q = 0;
+                    foreach (var i in alreadywere)
+                    {
+                        if (randnumber == i)
+                        {
+                            randnumber = rnd.Next(0, questions.Count);
+                        }
+                        else
+                        {
+                            q++;
+                        }
+                    }
+                    if (q == 5)
+                        break;
+                }
+            }
+            TextIn.Text = questions[randnumber];
+            rightanswernow = rightanswer[randnumber];
 
             vs1 = answers[randnumber].Split(';');
 
@@ -86,26 +121,26 @@ namespace Maslov_Bot_Kursov.Pages.Menu
             Radio2.Content = vs1[1];
             Radio3.Content = vs1[2];
             Radio4.Content = vs1[3];
-
+           
             return;
         }
 
         private void ButtonEnd_Click(object sender, RoutedEventArgs e)
         {
 
-            if (vs1[0] == rightanswer && Radio1.IsChecked == true)
+            if (vs1[0] == rightanswernow && Radio1.IsChecked == true)
             {
                 rightanswers++;
             }
-            if (vs1[1] == rightanswer && Radio2.IsChecked == true)
+            if (vs1[1] == rightanswernow && Radio2.IsChecked == true)
             {
                 rightanswers++;
             }
-            if (vs1[2] == rightanswer && Radio3.IsChecked == true)
+            if (vs1[2] == rightanswernow && Radio3.IsChecked == true)
             {
                 rightanswers++;
             }
-            if (vs1[3] == rightanswer && Radio4.IsChecked == true)
+            if (vs1[3] == rightanswernow && Radio4.IsChecked == true)
             {
                 rightanswers++;
             }
@@ -119,7 +154,6 @@ namespace Maslov_Bot_Kursov.Pages.Menu
             }
             else
             {
-                
                 questionscount++;
                 Radio1.IsChecked = false;
                 Radio2.IsChecked = false;

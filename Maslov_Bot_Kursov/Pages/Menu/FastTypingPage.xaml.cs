@@ -60,22 +60,30 @@ namespace Maslov_Bot_Kursov.Pages.Menu
         private void TextInp()
         {
             List<string> mass = new List<string>();
-            using (StreamReader sr = new StreamReader("Texts.txt"))
+            try
             {
-
-                while (sr.EndOfStream != true)
+                using (StreamReader sr = new StreamReader("Texts.txt"))
                 {
-                    mass.Add(sr.ReadLine());
+
+                    while (sr.EndOfStream != true)
+                    {
+                        mass.Add(sr.ReadLine());
+
+                    }
+                    sr.Close();
+                    Random rnd = new Random();
+                    TextIn.Text = mass[rnd.Next(0, mass.Count)];
+
 
                 }
-                sr.Close();
-                Random rnd = new Random();
-                TextIn.Text = mass[rnd.Next(0,mass.Count)];
-
-                
+                return;
             }
-            return;
-        }
+            catch
+            {
+                NavigationService?.Navigate(new Test());
+                MessageBox.Show("В корневом каталоге программы отсутсвует или не заполнен текстовый файл Texts.txt. Чтобы продолжить пользоваться данным функционалом, пожалуйста создайте и заполните файл Texts.txt в корневом каталоге программы");
+            }
+        } 
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {

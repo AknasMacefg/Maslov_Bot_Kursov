@@ -5,11 +5,13 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Maslov_Bot_Kursov"
         mc:Ignorable="d"
-        Title="Первичная настройка" Height="320" Width="300" ResizeMode="NoResize">
+        Title="Первоначальная настройка" Height="320" Width="400" ResizeMode="NoResize" Closed="Window_Closed">
     <Grid >
         <Button Name="SaveButton"  Content="Сохранить" Margin="48,223,0,28" Click="SaveButton_Click" HorizontalAlignment="Left" Width="104" />
         <TextBox Name="NameForBot" HorizontalAlignment="Left" Margin="48,52,0,0"  TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-
+        <Label Name="NameAlert" Foreground="Red" Content="Имя не заполнено" Margin="200,46,0,0"  Visibility="Hidden" Height="31" VerticalAlignment="Top" HorizontalAlignment="Left" Width="251"/>
+        <Label Name="DesignAlert" Foreground="Red" Content="Дизайн не выбран" Margin="200,109,0,0"  Visibility="Hidden" Height="31" VerticalAlignment="Top" HorizontalAlignment="Left" Width="251"/>
+        <Label Name="ImageAlert" Foreground="Red" Content="Изображение не выбрано" Margin="200,171,0,0"  Visibility="Hidden" Height="31" VerticalAlignment="Top" HorizontalAlignment="Left" Width="251"/>
         <TextBlock Margin="48,31,0,0" Text="Установить имя бота: " TextWrapping="Wrap" VerticalAlignment="Top"  HorizontalAlignment="Left" Width="120"/>
         <TextBlock Margin="48,90,0,0" Text="Установить тему интерфейса:" TextWrapping="Wrap" HorizontalAlignment="Left" Width="168" Height="16" VerticalAlignment="Top"/>
         <ComboBox Name="DesignBox" HorizontalAlignment="Left" Margin="48,111,0,0" VerticalAlignment="Top" Width="120" Foreground="Black">

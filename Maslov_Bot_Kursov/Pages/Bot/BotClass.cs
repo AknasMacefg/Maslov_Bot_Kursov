@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Windows;
 using System.Text;
 using System.IO;
 
@@ -7,9 +8,9 @@ namespace Maslov_Bot_Kursov.Pages.Bot
 {
     class BotClass
     {
-       public string name;
+        public string name;
         public bool firstTime;
-       public string img;
+        public string img;
         public string design;
 
 
@@ -26,7 +27,7 @@ namespace Maslov_Bot_Kursov.Pages.Bot
                     return Tuple.Create(vs[1], true);
                 }
             }
-            string answer = "Я не знаю как ответить на фразу ' "+ userText + " '.\n Напишите пожалуйста ответ, чтобы в следующий раз я смог ответить.";
+            string answer = "Я не знаю как ответить на фразу ' " + userText + " '.\n Напишите пожалуйста ответ, чтобы в следующий раз я смог ответить.";
             return Tuple.Create(answer, false);
         }
 
@@ -44,21 +45,31 @@ namespace Maslov_Bot_Kursov.Pages.Bot
 
         private List<string> WordsReader()
         {
+
+           
             List<string> mass = new List<string>();
 
-          
-            using (StreamReader sr = new StreamReader("BotWords.txt"))
+
+            try
             {
-     
-                while (sr.EndOfStream != true)
+                using (StreamReader sr = new StreamReader("BotWords.txt"))
                 {
-                    mass.Add(sr.ReadLine());
-               
+
+                    while (sr.EndOfStream != true)
+                    {
+                        mass.Add(sr.ReadLine());
+
+                    }
+                    sr.Close();
                 }
-                sr.Close();
+
+                return mass;
             }
-            
-            return mass;
+            catch
+            {
+                return mass;
+            }
+           
         }
 
 
@@ -66,44 +77,55 @@ namespace Maslov_Bot_Kursov.Pages.Bot
 
         private void WordsWriter(List<string> newmass)
         {
-
-            using (StreamWriter wr = new StreamWriter("BotWords.txt"))
-            {
-
-                foreach (var word in newmass)
+           
+                using (StreamWriter wr = new StreamWriter("BotWords.txt"))
                 {
-                    wr.WriteLine(word);
 
+                    foreach (var word in newmass)
+                    {
+                        wr.WriteLine(word);
+
+                    }
+                    wr.Close();
                 }
-                wr.Close();
-            }
 
-            return;
+                return;
+           
         }
 
         
-
+      
        public void CreateState()
         {
-            using (StreamWriter sw = new StreamWriter("BotState.txt"))
-            {
-                sw.WriteLine(name);
-                sw.WriteLine(firstTime);
-                sw.WriteLine(img);
-                sw.WriteLine(design);
-                sw.Close();
-            }
+           
+                using (StreamWriter sw = new StreamWriter("BotState.txt"))
+                {
+                    sw.WriteLine(name);
+                    sw.WriteLine(firstTime);
+                    sw.WriteLine(img);
+                    sw.WriteLine(design);
+                    sw.Close();
+                }
+           
         }
+    
 
        public void GetState()
         {
-            using (StreamReader sr = new StreamReader("BotState.txt"))
+            try
             {
-                name = sr.ReadLine();
-                firstTime = Convert.ToBoolean(sr.ReadLine());
-                img = sr.ReadLine();
-                design = sr.ReadLine();
-                sr.Close();
+                using (StreamReader sr = new StreamReader("BotState.txt"))
+                {
+                    name = sr.ReadLine();
+                    firstTime = Convert.ToBoolean(sr.ReadLine());
+                    img = sr.ReadLine();
+                    design = sr.ReadLine();
+                    sr.Close();
+                }
+            }
+            catch
+            {
+
             }
         }
 

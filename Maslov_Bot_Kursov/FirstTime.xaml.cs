@@ -21,30 +21,68 @@ namespace Maslov_Bot_Kursov
             InitializeComponent();
         }
 
+      
+
         private void SaveButton_Click(object sender, RoutedEventArgs e)
         {
-            BotClass bot = new BotClass();
+            if (NameForBot.Text != "" && Image.Text != "" && DesignBox.Text != "")
+            {
+                BotClass bot = new BotClass();
 
-            bot.name = NameForBot.Text;
-            bot.firstTime = true;
-            bot.img = Image.Text;
-            bot.design = DesignBox.Text;
-            bot.CreateState();
+                bot.name = NameForBot.Text;
+                bot.firstTime = true;
+                bot.img = Image.Text;
+                bot.design = DesignBox.Text;
+                bot.CreateState();
 
-            MessageBox.Show("Настройка прошла успешно!");
-            MainWindow window = new MainWindow();
-            window.Show();
-            window.IsEnabled = true;
-            window.NameBox.Text = bot.name;
+                MessageBox.Show("Настройка прошла успешно!");
+                MainWindow window = new MainWindow();
+                window.Show();
+                window.NameBox.Text = bot.name;
+
+                Close();
+            }
+            else
+            {
+                MessageBox.Show("Не все поля заполнены правильно!");
+            }
+            if (NameForBot.Text == "")
+            {
+                NameAlert.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                NameAlert.Visibility = Visibility.Hidden;
+            }
+
+            if (Image.Text == "")
+            {
+                ImageAlert.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                ImageAlert.Visibility = Visibility.Hidden;
+            }
+
+            if (DesignBox.Text == "")
+            {
+                DesignAlert.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                DesignAlert.Visibility = Visibility.Hidden;
+            }
+
+
+
+
+
+
+        }
+
+        private void Window_Closed(object sender, EventArgs e)
+        {
             Application.Current.MainWindow.Close();
-
-            Close();
-
-           
-
-            
-
-            
         }
     }
 }

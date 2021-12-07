@@ -34,7 +34,7 @@
         <TextBlock Canvas.Left="20" Canvas.Top="242" Text="TextBlock" TextWrapping="Wrap"  Visibility="Hidden" Margin="64,0,63,0"/>
 
 
-        <TextBlock Name="Counter" HorizontalAlignment="Left" Margin="10,0,0,10" Grid.Row="1" Text="0/100" TextWrapping="Wrap" Width="81"  Height="24" VerticalAlignment="Bottom"/>
+        <TextBlock Name="Counter" HorizontalAlignment="Left" Margin="10,0,0,10" Grid.Row="1" Text="0/25" TextWrapping="Wrap" Width="81"  Height="24" VerticalAlignment="Bottom"/>
 
     </Grid>
 </Page>

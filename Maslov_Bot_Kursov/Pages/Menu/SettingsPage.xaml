@@ -10,8 +10,8 @@
 
     <Grid>
         <Button Name="SaveButton"  Content="Сохранить" HorizontalAlignment="Left" Margin="43,234,0,0" VerticalAlignment="Top" Height="53" Width="104" Click="SaveButton_Click" />
-        <TextBox Name="NameForBot" HorizontalAlignment="Left" Margin="43,73,0,0"  TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-
+        <TextBox Name="NameForBot" Margin="43,73,0,0"  TextWrapping="Wrap" Height="18" VerticalAlignment="Top" HorizontalAlignment="Left" Width="120"/>
+        <Label Name="NameAlert" Foreground="Red" Content="Имя не заполнено" Margin="200,68,0,0"  Visibility="Hidden" Height="31" VerticalAlignment="Top" HorizontalAlignment="Left" Width="251"/>
         <TextBlock HorizontalAlignment="Left" Margin="43,52,0,0" Text="Изменить имя бота: " TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         <TextBlock HorizontalAlignment="Left" Margin="43,111,0,0" Text="Изменить тему интерфейса:" TextWrapping="Wrap" VerticalAlignment="Top" Width="157" />
         <ComboBox Name="DesignBox" HorizontalAlignment="Left" Margin="43,132,0,0" VerticalAlignment="Top" Width="120" Foreground="Black">

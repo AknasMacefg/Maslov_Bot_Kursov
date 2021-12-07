@@ -10,13 +10,13 @@
 
     <Grid>
         <Grid x:Name="Tutorial" Height="341" VerticalAlignment="Bottom" HorizontalAlignment="Center" Width="461" Visibility="Hidden">
-            <Button   Content="Начать" HorizontalAlignment="Center" Margin="0,208,0,0" VerticalAlignment="Top" Height="53" Width="111" Click="Button_Click_1"/>
-            <TextBlock  HorizontalAlignment="Center" Margin="0,0,0,184" Text="Проверка скорости печатания - это небольшая игра, в которй необходимо будет напечатать текст как можно быстре и с наименьшим количеством ошибок. После нажатия кнопки 'Начать' перед вами появится текст, который нужно будет перепечать в текстовом поле снизу. Как только вы завершите печать нажмите кнопку 'Завершить'." TextWrapping="Wrap" Width="418" Height="122" VerticalAlignment="Bottom"/>
+            <Button   Content="Начать"  FontSize="20" HorizontalAlignment="Center" Margin="0,208,0,0" VerticalAlignment="Top" Height="53" Width="111" Click="Button_Click_1"/>
+            <TextBlock  HorizontalAlignment="Center" Margin="0,0,0,184" FontSize="14" Text="Проверка скорости печатания - это небольшая игра, в которой необходимо напечатать текст как можно быстре и с наименьшим количеством промахов. После нажатия кнопки 'Начать' перед вами появится текст, который нужно будет перепечатать в текстовом поле снизу. Как только вы завершите печатать нажмите кнопку 'Завершить'." TextWrapping="Wrap" Width="418" Height="122" VerticalAlignment="Bottom"/>
 
         </Grid>
 
         <Grid x:Name="Game" Visibility="Visible">
-           
+            <Label Name="QuestionMark" Content="Текст:" FontSize="30"></Label>
             <TextBox Name="UserTextBox" HorizontalAlignment="Right" Margin="0,189,10,60" Text="" TextWrapping="Wrap" Width="441" TextChanged="UserTextBox_TextChanged"/>
             <TextBlock Name="TextIn" HorizontalAlignment="Right" Margin="0,62,10,171" Text="TextBlock" TextWrapping="Wrap" Width="441"  />
             <Button Name="ButtonEnd" Visibility="Hidden"  Content="Закончить" HorizontalAlignment="Center" Margin="0,0,0,10" Width="95" Click="Button_Click" Height="34" VerticalAlignment="Bottom"/>

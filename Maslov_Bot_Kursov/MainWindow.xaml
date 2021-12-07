@@ -17,12 +17,12 @@
             <RowDefinition Height="24*"/>
         </Grid.RowDefinitions>
         <Frame x:Name="MainFrame" Content="Frame" Source="Pages/Menu/ChatPage.xaml" NavigationUIVisibility="Hidden" Margin="10,10,10,2" Grid.Row="1"/>
-        <TextBlock Name="NameBox" Grid.Column="1" Text="{Binding Name}" TextWrapping="Wrap" VerticalAlignment="Center" Height="36" Margin="10,0,10,0"  TextAlignment="Center" FontSize="24"/>
-        <Button Content="Чат" FontSize="20" HorizontalAlignment="Left" Margin="10,8,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.403,0.303" Height="38" Width="109" Click="ButtonChat_Click"/>
-        <Button Content="Справочник" FontSize="16" HorizontalAlignment="Left" Margin="352,8,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.403,0.303" Height="38" Width="109"  Click="ButtonStudy_Click"/>
+        <TextBlock Name="NameBox"  Grid.Column="1" Text="{Binding Name}" TextWrapping="Wrap" VerticalAlignment="Center" Height="36" Margin="10,0,10,0"  TextAlignment="Center" FontSize="30"/>
+        <Button Content="Чат" FontSize="18" HorizontalAlignment="Left" Margin="10,8,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.403,0.303" Height="38" Width="109" Click="ButtonChat_Click"/>
+        <Button Content="Справка" FontSize="18" HorizontalAlignment="Left" Margin="352,8,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.403,0.303" Height="38" Width="109"  Click="ButtonStudy_Click"/>
         <Button Content="Настройки" FontSize="18" HorizontalAlignment="Left" Margin="238,8,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.403,0.303" Height="38" Width="109" Click="ButtonSettings_Click"/>
         <Image x:Name="BotImage" Grid.Column="1" Margin="14,10,16,16" Grid.Row="1"/>
-        <Button Content="Обучение" FontSize="20" HorizontalAlignment="Left" Margin="124,8,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.403,0.303" Height="38" Width="109" Click="ButtonTest_Click"/>
+        <Button Content="Практика" FontSize="18" HorizontalAlignment="Left" Margin="124,8,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.403,0.303" Height="38" Width="109" Click="ButtonTest_Click"/>
 
     </Grid>
 </Window>

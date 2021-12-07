@@ -12,7 +12,7 @@
 
     <Style TargetType="{x:Type Button}">
         <Setter Property="Background" Value="#191b1c"/>
-        <Setter Property="Foreground" Value="#ffffff"/>
+        <Setter Property="Foreground" Value="#82990c"/>
         <Setter Property="BorderBrush" Value="#82990c"/>
     </Style>
     <Style TargetType="{x:Type Grid}">
@@ -20,13 +20,13 @@
     </Style>
     <Style TargetType="{x:Type TextBox}">
         <Setter Property="Background" Value="#191b1c"/>
-        <Setter Property="Foreground" Value="#ffffff"/>
+        <Setter Property="Foreground" Value="#82990c"/>
         <Setter Property="BorderBrush" Value="#82990c"/>
     </Style>
 
     <Style TargetType="{x:Type ListBox}">
         <Setter Property="Background" Value="#191b1c"/>
-        <Setter Property="Foreground" Value="#ffffff"/>
+        <Setter Property="Foreground" Value="#82990c"/>
         <Setter Property="BorderBrush" Value="#82990c"/>
     </Style>
 
@@ -35,16 +35,16 @@
     </Style>
 
     <Style TargetType="{x:Type TextBlock}">
-        <Setter Property="Foreground" Value="#ffffff"/>
+        <Setter Property="Foreground" Value="#82990c"/>
     </Style>
 
     <Style TargetType="{x:Type Label}">
-        <Setter Property="Foreground" Value="#ffffff"/>
+        <Setter Property="Foreground" Value="#82990c"/>
     </Style>
 
     <Style TargetType="{x:Type ComboBox}">
         <Setter Property="BorderBrush" Value="#82990c"/>
-        <Setter Property="Foreground" Value="#ffffff"/>
+        <Setter Property="Foreground" Value="#82990c"/>
         <Setter Property="Foreground" Value="#191b1c"/>
     </Style>
 </ResourceDictionary>
