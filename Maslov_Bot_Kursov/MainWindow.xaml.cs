@@ -37,11 +37,12 @@ namespace Maslov_Bot_Kursov
             if (bot.firstTime == false)
             {
                 FirstTime first = new FirstTime();
-                this.IsEnabled = false;
+                
                 this.Hide();
                 first.Show();
 
             }
+           
             NameBox.Text = bot.name;
             switch (bot.img)
             {

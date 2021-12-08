@@ -28,7 +28,7 @@
 
             <RadioButton Name="Radio1" FontSize="20" Margin="57,24,10,25" Grid.Column="1" Grid.Row="1" Checked="RadioButton1_Checked"/>
             <RadioButton Name="Radio2"  FontSize="20" Margin="34,10,34,60" Grid.Row="2" Checked="RadioButton2_Checked"/>
-            <RadioButton Name="Radio3"  FontSize="20" Margin="34,24,33,24" Grid.Row="1" Checked="RadioButton3_Checked"/>
+            <RadioButton   Name="Radio3"  FontSize="20" Margin="34,24,33,24" Grid.Row="1" Checked="RadioButton3_Checked"/>
             <RadioButton Name="Radio4"  FontSize="20" Grid.Column="1" Margin="57,10,10,60" Grid.Row="2" Checked="RadioButton4_Checked"></RadioButton>
             <Label Name="QuestionMark" Content="Вопрос:" FontSize="30"></Label>
             <TextBlock Name="TextIn" FontSize="18" HorizontalAlignment="Left" Margin="10,66,0,10" Text="TextBlock" TextWrapping="Wrap" Width="441" Grid.ColumnSpan="2"  />

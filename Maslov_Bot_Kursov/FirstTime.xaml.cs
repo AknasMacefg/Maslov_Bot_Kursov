@@ -36,9 +36,7 @@ namespace Maslov_Bot_Kursov
                 bot.CreateState();
 
                 MessageBox.Show("Настройка прошла успешно!");
-                MainWindow window = new MainWindow();
-                window.Show();
-                window.NameBox.Text = bot.name;
+                
 
                 Close();
             }
@@ -82,7 +80,10 @@ namespace Maslov_Bot_Kursov
 
         private void Window_Closed(object sender, EventArgs e)
         {
-            Application.Current.MainWindow.Close();
+           
+            Application.Current.MainWindow.Show();
+            var window = (Application.Current.MainWindow as MainWindow);
+            window.SettingSettings();
         }
     }
 }
